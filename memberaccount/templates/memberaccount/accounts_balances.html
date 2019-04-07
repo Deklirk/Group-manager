@@ -1,0 +1,40 @@
+{% extends 'memberaccount/generic_base.html' %}
+{% block content %}
+	<!-- Page Heading -->
+	<h1 class="h3 mb-2 text-gray-800">ACCOUNTS BALANCES</h1>
+	<p class="mb-4">Below are all the accounts that you have with us and their balances .</p>
+
+	
+	<!-- DataTales Example -->
+	<div class="card shadow mb-4">
+		<div class="card-header py-3">
+			<h6 class="m-0 font-weight-bold text-primary">All Acounts Balances</h6>
+		</div>
+		<div class="card-body">
+			<div class="table-responsive">
+				<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+					<thead>
+						<tr>
+							<th>ID</th>
+							<th>Account Name</th>
+							<th>Account Type</th>
+							<th>Account Number</th>                      
+							<th>Account Balance</th>
+						</tr>
+					</thead>                  
+					<tbody>
+						{% for member in group_members %}	
+							<tr>
+								<td>{{ member.id }}</td>
+								<td>{{ member.first_name }}</td>
+								<td>{{ member.last_name }}</td>
+								<td>{{ member.email }}</td>
+								<td>{{ member.date_joined }}</td>
+							</tr>
+						{% endfor %}                    
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>	
+{% endblock %}

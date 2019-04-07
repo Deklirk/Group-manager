@@ -3,6 +3,7 @@ from django.db import models
 from django.utils import timezone
 
 
+
 class Member_share(models.Model):    
     date_posted = models.DateTimeField(default=timezone.now)
     document_no = models.CharField(max_length=200)
